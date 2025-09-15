@@ -27,13 +27,13 @@ function upDateTime() {
   tokyoDate.innerHTML = tokyoLocation.format("MMM Do YYYY");
   tokyoTime.innerHTML = tokyoLocation.format("HH:mm:ss [<span>]A[</span>]");
 
-  //Paris
-  let parisDate = document.querySelector("#paris .date");
-  let parisTime = document.querySelector("#paris .time");
-  let parisLocation = moment().tz("Europe/Paris");
+  //Hawaii
+  let hawaiiDate = document.querySelector("#hawaii .date");
+  let hawaiiTime = document.querySelector("#hawaii .time");
+  let hawaiiLocation = moment().tz("US/Hawaii");
 
-  parisDate.innerHTML = parisLocation.format("MMM Do YYYY");
-  parisTime.innerHTML = parisLocation.format("HH:mm:ss [<span>]A[</span>]");
+  hawaiiDate.innerHTML = hawaiiLocation.format("MMM Do YYYY");
+  hawaiiTime.innerHTML = hawaiiLocation.format("HH:mm:ss [<span>]A[</span>]");
 }
 
 upDateTime();
