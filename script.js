@@ -38,3 +38,10 @@ function upDateTime() {
 
 upDateTime();
 setInterval(upDateTime, 1000);
+
+function upDateCity(event) {
+  let timeZone = moment().tz(event.target.value);
+}
+
+let selectCity = document.querySelector("#select");
+selectCity.addEventListener("change", upDateCity);
