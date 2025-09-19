@@ -40,8 +40,20 @@ upDateTime();
 setInterval(upDateTime, 1000);
 
 function upDateCity(event) {
-  let timeZone = moment().tz(event.target.value);
+  let timeZone = event.target.value;
+  let cityTimeZone = moment().tz(timeZone);
+  let cityName = timeZone.split("/")[1];
+  let cities = document.querySelector(".cities");
+  cities.innerHTML = `<div class="city">
+          <div class="name-date">
+            <h2>${cityName}</h2>
+            <div class="date">${cityTimeZone.format("MMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTimeZone.format(
+            "HH:mm:ss [<span>]A[</span>]"
+          )}</div>
+        </div>`;
 }
 
-let selectCity = document.querySelector("#select");
-selectCity.addEventListener("change", upDateCity);
+let citySelected = document.querySelector("#select");
+citySelected.addEventListener("change", upDateCity);
